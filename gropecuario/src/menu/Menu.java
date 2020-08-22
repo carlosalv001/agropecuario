@@ -5,6 +5,7 @@
  */
 package menu;
 
+import cobrar.cobrar;
 import productos.productos;
 
 /**
@@ -14,6 +15,7 @@ import productos.productos;
 public class Menu extends javax.swing.JFrame {
 
     productos produ;
+    cobrar cobr;
     public Menu() {
         initComponents();
     }
@@ -43,6 +45,11 @@ public class Menu extends javax.swing.JFrame {
         });
 
         CobrarBtn.setText("Cobrar");
+        CobrarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CobrarBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -80,6 +87,13 @@ public class Menu extends javax.swing.JFrame {
         produ.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_ProductosBtnActionPerformed
+
+    private void CobrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CobrarBtnActionPerformed
+        this.setVisible(false);
+        cobr = new cobrar();
+        cobr.setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CobrarBtnActionPerformed
 
     /**
      * @param args the command line arguments
