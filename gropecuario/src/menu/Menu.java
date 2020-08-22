@@ -5,15 +5,15 @@
  */
 package menu;
 
+import productos.productos;
+
 /**
  *
  * @author USER
  */
 public class Menu extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Menu
-     */
+    productos produ;
     public Menu() {
         initComponents();
     }
@@ -36,6 +36,11 @@ public class Menu extends javax.swing.JFrame {
         Menulbl.setText("Menu");
 
         ProductosBtn.setText("Productos");
+        ProductosBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProductosBtnActionPerformed(evt);
+            }
+        });
 
         CobrarBtn.setText("Cobrar");
 
@@ -69,6 +74,12 @@ public class Menu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ProductosBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductosBtnActionPerformed
+        produ = new productos();
+        produ.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_ProductosBtnActionPerformed
 
     /**
      * @param args the command line arguments
